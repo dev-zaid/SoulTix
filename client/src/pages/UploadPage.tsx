@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 function UploadPage() {
-  
   const [selectedFile, setSelectedFile]: any = useState();
   const [cid, setCid]: any = useState();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [url, setUrl] = useState("");
+  const [venue, setVenue] = useState("");
+  const [eventDate, setEventDate] = useState("");
+  const [bookingDate, setBookingDate] = useState("");
 
   const changeHandler = (event: any) => {
     setSelectedFile(event.target.files[0]);
@@ -43,7 +44,9 @@ function UploadPage() {
       const metaData = {
         name: { name },
         description: { description },
-        external_url: process.env.REACT_APP_GATEWAY_URL,
+        venue: { venue },
+        event_date: { eventDate },
+        booking_date: { bookingDate },
         image: `ipfs://${resData.IpfsHash}`,
       };
       console.log(metaData);
@@ -66,7 +69,7 @@ function UploadPage() {
                 required
               />
               <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                Anime Name
+                Event Name
               </label>
             </div>
             <div className="relative z-0 w-full mb-5 group">
@@ -86,15 +89,39 @@ function UploadPage() {
                 type="text"
                 id="floating_password"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                onChange={(e) => setUrl(e.target.value)}
+                onChange={(e) => setVenue(e.target.value)}
                 required
               />
               <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                URL
+                Venue
               </label>
             </div>
 
-            <div className="grid md:grid-cols-2 md:gap-6"></div>
+            {/* <div className="grid md:grid-cols-2 md:gap-6"></div> */}
+            <div className="relative z-0 w-full mb-5 group">
+              <input
+                type="datetime-local"
+                id="floating_date"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                onChange={(e) => setEventDate(e.target.value)}
+                required
+              />
+              <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Event Date & Time
+              </label>
+            </div>
+            <div className="relative z-0 w-full mb-5 group">
+              <input
+                type="datetime-local"
+                id="floating_date"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                onChange={(e) => setBookingDate(e.target.value)}
+                required
+              />
+              <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Booking Date & Time
+              </label>
+            </div>
           </form>
           <label className="form-label mr-2">
             Choose File
@@ -109,7 +136,7 @@ function UploadPage() {
       >
         Submit
       </button>
-      
+
       {cid && (
         <div className="mt-4">
           <img

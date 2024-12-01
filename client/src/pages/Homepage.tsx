@@ -11,9 +11,9 @@ export default function Homepage() {
   return (
     <div>
       <Banner />
-      <CardCarousel />
+      {/* <CardCarousel /> */}
       <Description />
-      <Overline />
+      {/* <Overline /> */}
       <About />
       {/* <NFTdivider /> */}
     </div>

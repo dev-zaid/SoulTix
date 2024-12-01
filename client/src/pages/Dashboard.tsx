@@ -1,14 +1,33 @@
 // import { useState } from "react";
 // import OTVTOKENABI from "../abis/NFTContract.js";
 // import constants from "../helper/constants.js";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import SpotifyTopArtists from "./SpotifyTopArtists";
+import axios from "axios";
+import spotify from "../images/spotifylogo-removebg-preview.png";
+import apple from "../images/aaa-removebg-preview.png";
+import yt from "../images/ytmusic1.png";
+import { SpotifyLoginButton } from "../components/SpotifyLoginButton";
 
 export default function Dashboard() {
-  // Define an array of objects containing image URLs and other relevant data
+  const { connected, account, connect } = useWallet();
+  const [accountAddress, setAccountAddress] = useState("");
+  const CLIENT_ID = "552366a516f2483caccc7e19b23cb67a";
+  const REDIRECT_URI = "http://localhost:3000/spotify";
+
+  useEffect(() => {
+    if (connected && account) {
+      setAccountAddress(account.address); // Fetch the user's account address
+    }
+  }, [connected, account]);
+
   const imageItems = [
     {
       id: 1,
-      title: "Anime 1",
+      title: "Artist 1",
       coverUrl:
         "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/Otaku%20E1S1_1.jpg",
       imageUrls: [
@@ -18,98 +37,74 @@ export default function Dashboard() {
       description:
         "Collaborate in realtime with other editors in a project. See what other editors are doing and edit even a simple text together",
     },
-    {
-      id: 2,
-      title: "Anime 2",
-      coverUrl:
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/haki-1024x341.jpg.webp",
-      imageUrl: [
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/haki-1024x341.jpg.webp",
-      ],
-      description:
-        "Haki is a special power system in the anime series One Piece, granting users various abilities such as enhanced physical strength, precognition, and the ability to control others.",
-    },
-    {
-      id: 3,
-      title: "Anime 3",
-      coverUrl:
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/images.jpg",
-      imageUrl: [
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/images.jpg",
-      ],
-      description:
-        "Azuki Anime is a community-driven platform providing curated recommendations and discussions for anime enthusiasts.",
-    },
-    {
-      id: 4,
-      title: "Anime 4",
-      coverUrl:
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/matt.webp",
-      imageUrl: [
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/matt.webp",
-      ],
-      description:
-        "Azuki Anime is a community-driven platform providing curated recommendations and discussions for anime enthusiasts.",
-    },
-    {
-      id: 5,
-      title: "Anime 5",
-      coverUrl:
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/Otaku%20E4S1_4.webp",
-      imageUrl: [
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/Otaku%20E4S1_4.webp",
-      ],
-      description:
-        "Azuki Anime is a community-driven platform providing curated recommendations and discussions for anime enthusiasts.",
-    },
-    {
-      id: 6,
-      title: "Anime 6",
-      coverUrl:
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/bcb5c83e36ffbfee2f769c32e51894fb.jpg",
-      imageUrl: [
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/bcb5c83e36ffbfee2f769c32e51894fb.jpg",
-      ],
-      description:
-        "Mob Psycho 100 is an anime series that follows the journey of a powerful psychic middle schooler named Mob as he navigates through life while learning to control his extraordinary abilities and facing various supernatural challenges.",
-    },
-
-    // Add more objects for other images
   ];
-  // const contractAddress = constants.CONRACTADDR;
-  // const contractABI = OTVTOKENABI;
-  // const { address } = useAccount();
-
-  /*
-   * Create a method that gets all waves from your contract
-   */
-  // const { writeContract } = useWriteContract();
 
   return (
     <div>
-      <section className="py-12 bg-gray-900 text-gray-100 sm:py-12 lg:py-16 ">
-        {/* <div className="flex justify-center items-center">
-          <button
-            type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm m-10 px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-            onClick={() => {
-              writeContract({
-                address: contractAddress as `0x${string}`,
-                abi: contractABI,
-                functionName: "mintNFT",
-                args: [address!, "1234"],
-              });
-            }}
-          >
-            Mint
-          </button>
-        </div> */}
-
+      <section className="py-12 text-gray-100 sm:py-12 lg:py-16 ">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-xl mx-auto text-center xl:max-w-2xl">
             <h2 className="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl mb-6 my-10">
               Dashboard
             </h2>
+          </div>
+          <hr />
+          <br />
+          {/* user profile */}
+          <div className="flex flex-col items-center justify-center space-y-2">
+            <div>User: {accountAddress}</div>
+            <div className="">
+              <div className="flex flex-col items-center justify-center space-y-2 text-lg mb-4">
+                Connect what you Listen
+              </div>
+              <div className="flex items-center justify-center gap-8">
+                <button className="flex items-center gap-2 bg-[#1DB954] hover:bg-[#1ed760] text-white px-4 py-2 rounded-full transition-all duration-200 font-medium">
+                  <img
+                    src={spotify}
+                    alt="Spotify"
+                    className="w-6 h-6 object-contain"
+                  />
+                  <span>Spotify</span>
+                </button>
+
+                {/* <div className="m-16">
+                  <h1>Spotify </h1>
+                  {!token ? (
+                    <SpotifyLoginButton
+                      CLIENT_ID={CLIENT_ID}
+                      REDIRECT_URI={REDIRECT_URI}
+                    />
+                  ) : (
+                    <button onClick={logout}>Logout</button>
+                  )}
+                  {/* ... rest of your component ... */}
+                {/* </div>  */}
+
+                <button className="flex items-center gap-2 bg-gradient-to-r from-[#FB5C74] to-[#FA233B] hover:from-[#FA233B] hover:to-[#FB5C74] text-white px-4 py-2 rounded-full transition-all duration-200 font-medium">
+                  <img
+                    src={apple}
+                    alt="Apple Music"
+                    className="w-6 h-6 object-contain"
+                  />
+                  <span>Apple Music</span>
+                </button>
+
+                <button className="flex items-center gap-2 bg-[#FF0000] hover:bg-red-600 text-white px-4 py-2 rounded-full transition-all duration-200 font-medium">
+                  <img
+                    src={yt}
+                    alt="YT Music"
+                    className="w-6 h-6 object-contain"
+                  />
+                  <span>YouTube Music</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <div className="flex flex-col items-center justify-center space-y-2 text-3xl">
+            Your Top Artists
           </div>
           <div className="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 sm:text-left">
             {imageItems.map((item, index) => (

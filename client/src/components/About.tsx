@@ -9,7 +9,7 @@ export default function About() {
                 About the <br /> Creators! <br /> Connect Now
               </h3>
               <p className="text-slate-500 font-Inter text-sm">
-                Join us in fostering community bonds. At NFTFlix, <br />
+                Join us in fostering community bonds. At SoulTix, <br />
                 we're dedicated to connecting with our community to <br /> share
                 experiences, support one another, and create a vibrant,
                 inclusive space for all.
@@ -68,7 +68,7 @@ export default function About() {
                   <div className="flex flex-col justify-start pl-4 pr-2">
                     <div className="flex justify-between items-center gap-20">
                       <h5 className="text-white text-lg font-Sora">
-                        Jeet Shah
+                        Ujjawal Jaiswal
                       </h5>
                     </div>
                     <div className="flex justify-start items-center gap-6 mt-2">
