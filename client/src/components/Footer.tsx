@@ -1,3 +1,4 @@
+import logo from "../images/logo.png";
 export default function Footer() {
   return (
     <div>
@@ -8,11 +9,7 @@ export default function Footer() {
         >
           <div className="basis-1/3 py-2 px-3 md:p-5 xl:pr-16 flex flex-col gap-6 lg:gap-24">
             <div className="flex flex-row gap-3">
-              <img
-                className="w-6 h-6 my-1 ml-2"
-                src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/resources/naruto%20logo.png"
-                alt="logo"
-              />
+              <img className="w-6 h-6 my-1 ml-2" src={logo} alt="logo" />
               <h3 className="text-lg text-white font-Sora font-semibold tracking-wide">
                 SoulTix
               </h3>
@@ -24,8 +21,12 @@ export default function Footer() {
           <div className="basis-1/3 border p-5 xl:p-8 border-y-gray-800 border-x-transparent lg:border-x-gray-800 lg:border-y-transparent flex flex-col justify-start gap-4">
             <div className="flex flex-col justify-start gap-2 w-max text-white text-md font-Sora">
               <div className="hover:text-slate-400 cursor-pointer">Home</div>
-              <div className="hover:text-slate-400 cursor-pointer">Dashboard</div>
-              <div className="hover:text-slate-400 cursor-pointer">Discover</div>
+              <div className="hover:text-slate-400 cursor-pointer">
+                Dashboard
+              </div>
+              <div className="hover:text-slate-400 cursor-pointer">
+                Discover
+              </div>
             </div>
             <div className="flex flex-row justify-start gap-3 items-center text-slate-500 transition-all ease-in-out text-lg">
               <i className="bx bxl-facebook-square cursor-pointer hover:text-slate-300"></i>

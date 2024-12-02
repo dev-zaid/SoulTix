@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../images/Sygnet.png";
+import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 
 // import { Layout, Row, Col } from "antd";
@@ -26,7 +26,7 @@ export default function Navbar() {
                 alt="Logo"
               />
             </a>
-            <Link to="/" className="ml-4 text-xl font-bold text-gray-300">
+            <Link to="/" className="ml-4 text-2xl font-bold text-gray-300">
               SoulTix
             </Link>
           </div>

@@ -81,7 +81,7 @@ export default function AvailableNFT() {
   const imageDescription = selectedAnime ? selectedAnime.description : [];
 
   return (
-    <div className="py-12 bg-gray-900 text-gray-100 sm:py-12 lg:py-16">
+    <div className="py-12  text-gray-100 sm:py-12 lg:py-16">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-xl mx-auto text-center xl:max-w-2xl">
           <h2 className="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl mb-6 my-10">

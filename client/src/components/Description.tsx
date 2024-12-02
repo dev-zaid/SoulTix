@@ -1,5 +1,7 @@
 import SilverHand from "../images/Silver-Hand.png";
 import nft1 from "../images/nft1.webp";
+import concert1 from "../images/concert1.jpg";
+import concert3 from "../images/concert3.webp";
 
 export default function Description() {
   return (
@@ -54,19 +56,15 @@ export default function Description() {
                   <div data-status="active" className="min-w-56 ">
                     <img
                       className="my-3 rounded-xl w-full h-80 object-cover"
-                      src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/c0d10ac746764f4daaa3c10e3260b83a.jpg"
+                      src={concert1}
                       alt="Item Slider"
-                    />{" "}
-                    <p className="text-white text-sm font-Sora">
-                      One-Piece
-                      <br />
-                    </p>
+                    />
                     <hr className="border-gray-800 my-4" />
                   </div>
                   <div data-status="inactive" className="min-w-56">
                     <img
                       className="my-3 rounded-xl w-full h-80 object-cover"
-                      src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/d3fe5844d81e1fe318620a000cee00f1.jpg"
+                      src={concert3}
                       alt="Item Slider"
                     />{" "}
                     <p className="text-white text-sm font-Sora">
@@ -114,7 +112,7 @@ export default function Description() {
               <div className="card-body border border-gray-900 rounded-xl px-8 py-4 basis-1/3 h-full flex flex-col justify-center lg:justify-start">
                 <h3 className="mt-6 text-white text-xl md:text-2xl font-Sora text-center lg:text-start">
                   Top NFT's to gain
-                  <br className="hidden lg:block" /> through streaming
+                  <br className="hidden lg:block" />
                 </h3>
                 <div className="flex flex-row gap-4 mx-auto lg:mx-0 mt-7">
                   <img
