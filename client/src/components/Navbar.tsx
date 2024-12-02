@@ -21,8 +21,8 @@ export default function Navbar() {
           <div id="logo" className="basis-3/12 flex justify-start items-center">
             <a href="/">
               <img
-                className="w-6 h-6"
-                src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/resources/naruto%20logo.png"
+                className="w-10 h-10"
+                src="https://cngupugurzdczieryupu.supabase.co/storage/v1/object/public/unfold24/soultix-logo.png?t=2024-12-02T03%3A30%3A50.177Z"
                 alt="Logo"
               />
             </a>
