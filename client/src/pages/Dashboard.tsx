@@ -13,6 +13,7 @@ import yt from "../images/ytmusic1.png";
 import { SpotifyLoginButton } from "../components/SpotifyLoginButton";
 import FanScoreCalculator from "../components/FanScoreCalculator";
 import GaugeChart from "../components/animata/gauge-chart";
+import art3 from "../images/art3.jpg";
 
 export default function Dashboard() {
   const { connected, account, connect } = useWallet();
@@ -30,10 +31,9 @@ export default function Dashboard() {
     {
       id: 1,
       title: "Artist 1",
-      coverUrl:
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/Otaku%20E1S1_1.jpg",
+      coverUrl: { art3 },
       imageUrls: [
-        "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/Otaku%20E1S1_1.jpg",
+        { art3 },
         "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/haki-1024x341.jpg.webp",
       ],
       description:
@@ -50,7 +50,7 @@ export default function Dashboard() {
               Dashboard
             </h2>
           </div>
-          <hr />
+          {/* <hr /> */}
           <br />
           {/* user profile */}
           <div className="flex flex-col items-center justify-center space-y-2">

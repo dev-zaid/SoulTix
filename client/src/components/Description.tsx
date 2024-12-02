@@ -2,6 +2,10 @@ import SilverHand from "../images/Silver-Hand.png";
 import nft1 from "../images/nft1.webp";
 import concert1 from "../images/concert1.jpg";
 import concert3 from "../images/concert3.webp";
+import art1 from "../images/art1.jpg";
+import art2 from "../images/art2.jpg";
+import art3 from "../images/art3.jpg";
+import art4 from "../images/art4.jpg";
 
 export default function Description() {
   return (
@@ -118,16 +122,13 @@ export default function Description() {
                   <img
                     className="aspect-square rounded-2xl"
                     alt="Card item"
-                    src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/de8d11750fe67195be01ce424de0e8fb.jpg"
+                    src={art1}
                     width="110"
                     height="110"
                   />
 
                   <div className="flex justify-between flex-col">
                     <div className="text-wrapper-ellips">
-                      <p className="text-white text-sm pb-1 w-full block basis-full">
-                        Monk
-                      </p>
                       <div className="flex flex-row justify-start lg:justify-between">
                         <div className="text-white text-xs hidden lg:flex items-center  font-Sora">
                           <i className="bx bx-time text-sm font-thin leading-4 pr-2"></i>
@@ -152,16 +153,13 @@ export default function Description() {
                   <img
                     className="aspect-square rounded-2xl"
                     alt="Card item"
-                    src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/download.jpg"
+                    src={art2}
                     width="110"
                     height="110"
                   />
 
                   <div className="flex justify-between flex-col">
                     <div className="text-wrapper-ellips">
-                      <p className="text-white text-sm pb-1 w-full block basis-full">
-                        Pokemon
-                      </p>
                       <div className="flex flex-row justify-start lg:justify-between">
                         <div className="text-white text-xs hidden lg:flex items-center  font-Sora">
                           <i className="bx bx-time text-sm font-thin leading-4 pr-2"></i>
@@ -186,16 +184,13 @@ export default function Description() {
                   <img
                     className="aspect-square rounded-2xl"
                     alt="Card item"
-                    src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/e375b5bc3d3e2df39d59b7fcad7793bd.jpg"
+                    src={art3}
                     width="110"
                     height="110"
                   />
 
                   <div className="flex justify-between flex-col">
                     <div className="text-wrapper-ellips">
-                      <p className="text-white text-sm pb-1 w-full block basis-full">
-                        Hat
-                      </p>
                       <div className="flex flex-row justify-start lg:justify-between">
                         <div className="text-white text-xs hidden lg:flex items-center  font-Sora">
                           <i className="bx bx-time text-sm font-thin leading-4 pr-2"></i>
@@ -220,16 +215,13 @@ export default function Description() {
                   <img
                     className="aspect-square rounded-2xl"
                     alt="Card item"
-                    src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/f0acb7bd04be5990641e4bf35053b682.jpg"
+                    src={art4}
                     width="110"
                     height="110"
                   />
 
                   <div className="flex justify-between flex-col">
                     <div className="text-wrapper-ellips">
-                      <p className="text-white text-sm pb-1 w-full block basis-full">
-                        Fire
-                      </p>
                       <div className="flex flex-row justify-start lg:justify-between">
                         <div className="text-white text-xs hidden lg:flex items-center  font-Sora">
                           <i className="bx bx-time text-sm font-thin leading-4 pr-2"></i>

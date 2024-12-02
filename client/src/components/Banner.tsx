@@ -25,7 +25,7 @@ export default function Banner() {
           }`}
         >
           <div className="text-slate-400 text-xs font-thin text-center mb-5 font-Inter tracking-widest uppercase">
-            watch earn share
+            stream earn spend
           </div>
           <h1
             className={`text-3xl sm:text-6xl lg:text-8xl grid justify-center font-bold leading-none tracking-wide ${

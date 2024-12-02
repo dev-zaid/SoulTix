@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
           <div className="basis-1/3 flex flex-col gap-6 lg:gap-0 py-2 px-3 md:p-5 xl:px-16 xl:py-8 justify-center">
             <div className="text-slate-500 text-center lg:text-start text-sm font-Inter">
-              Made with Anime! <p>Made with Awesomeness!!</p>
+              <p>Made with Awesomeness!!</p>
             </div>
           </div>
         </div>

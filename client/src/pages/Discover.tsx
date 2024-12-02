@@ -2,12 +2,14 @@ import React from "react";
 import { HoverEffect } from "../components/ui/card-hover-effect";
 import concert from "../images/concert.jpg";
 import alan from "../images/nft3.webp";
+import art1 from "../images/art1.jpg";
+import art2 from "../images/art2.jpg";
 import { Link } from "react-router-dom";
 export default function Discover() {
   const events = [
     {
       id: "1",
-      name: "Renaissance World Tour",
+      name: "ColdPlay",
       artist: "Beyoncé",
       image: concert,
       bookingstartDate: "2024-04-01T10:00:00Z",
@@ -40,9 +42,75 @@ export default function Discover() {
     },
     {
       id: "2",
-      name: "The Eras Tour",
+      name: "Alan Walker",
       artist: "Taylor Swift",
       image: alan,
+      bookingstartDate: "2024-05-01T10:00:00Z",
+      bookingendDate: "2024-07-15T23:59:59Z",
+      status: "upcoming",
+      date: "2024-07-25T20:00:00Z",
+      doors: "2024-07-25T18:30:00Z",
+      duration: "210",
+      venue: "MetLife Stadium",
+      pricing: {
+        currency: "USD",
+        tiers: [
+          {
+            name: "VIP Package",
+            price: 899.99,
+            benefits: ["VIP Lounge", "Meet & Greet", "Exclusive Merch"],
+          },
+          {
+            name: "Premium",
+            price: 399.99,
+            benefits: ["Premium Seating", "Early Entry"],
+          },
+          {
+            name: "General",
+            price: 149.99,
+            benefits: ["Standard Seating"],
+          },
+        ],
+      },
+    },
+    {
+      id: "3",
+      name: "Travis Scott",
+      artist: "Taylor Swift",
+      image: art1,
+      bookingstartDate: "2024-05-01T10:00:00Z",
+      bookingendDate: "2024-07-15T23:59:59Z",
+      status: "upcoming",
+      date: "2024-07-25T20:00:00Z",
+      doors: "2024-07-25T18:30:00Z",
+      duration: "210",
+      venue: "MetLife Stadium",
+      pricing: {
+        currency: "USD",
+        tiers: [
+          {
+            name: "VIP Package",
+            price: 899.99,
+            benefits: ["VIP Lounge", "Meet & Greet", "Exclusive Merch"],
+          },
+          {
+            name: "Premium",
+            price: 399.99,
+            benefits: ["Premium Seating", "Early Entry"],
+          },
+          {
+            name: "General",
+            price: 149.99,
+            benefits: ["Standard Seating"],
+          },
+        ],
+      },
+    },
+    {
+      id: "4",
+      name: "Eminem",
+      artist: "Taylor Swift",
+      image: art2,
       bookingstartDate: "2024-05-01T10:00:00Z",
       bookingendDate: "2024-07-15T23:59:59Z",
       status: "upcoming",
