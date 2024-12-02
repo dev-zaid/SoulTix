@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../images/Sygnet.png";
+import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 
 // import { Layout, Row, Col } from "antd";
@@ -20,13 +20,9 @@ export default function Navbar() {
         <div className="flex flex-row items-center justify-between lg:justify-center">
           <div id="logo" className="basis-3/12 flex justify-start items-center">
             <a href="/">
-              <img
-                className="w-6 h-6"
-                src="https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/resources/naruto%20logo.png"
-                alt="Logo"
-              />
+              <img className="w-8 h-8" src={logo} alt="Logo" />
             </a>
-            <Link to="/" className="ml-4 text-xl font-bold text-gray-300">
+            <Link to="/" className="ml-4 text-2xl font-bold text-gray-300">
               SoulTix
             </Link>
           </div>

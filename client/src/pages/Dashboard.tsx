@@ -11,6 +11,8 @@ import spotify from "../images/spotifylogo-removebg-preview.png";
 import apple from "../images/aaa-removebg-preview.png";
 import yt from "../images/ytmusic1.png";
 import { SpotifyLoginButton } from "../components/SpotifyLoginButton";
+import FanScoreCalculator from "../components/FanScoreCalculator";
+import GaugeChart from "../components/animata/gauge-chart";
 
 export default function Dashboard() {
   const { connected, account, connect } = useWallet();
@@ -52,7 +54,7 @@ export default function Dashboard() {
           <br />
           {/* user profile */}
           <div className="flex flex-col items-center justify-center space-y-2">
-            <div>User: {accountAddress}</div>
+            {/* <div>User: {accountAddress}</div> */}
             <div className="">
               <div className="flex flex-col items-center justify-center space-y-2 text-lg mb-4">
                 Connect what you Listen
@@ -98,6 +100,7 @@ export default function Dashboard() {
                   <span>YouTube Music</span>
                 </button>
               </div>
+              <div>{/* <FanScoreCalculator /> */}</div>
             </div>
           </div>
           <br />
