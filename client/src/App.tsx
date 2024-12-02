@@ -25,7 +25,7 @@ import { useWallet, WalletName } from "@aptos-labs/wallet-adapter-react";
 
 // import { Layout, Row, Col } from "antd";
 import UploadPage from "./pages/UploadPage";
-import SpotifyTopArtists from "./pages/SpotifyTopArtists";
+import SpotifyTopArtists from "./pages/LoginSpotify";
 
 function App() {
   // const { account } = useWallet();

@@ -14,7 +14,7 @@ export default function Homepage() {
       {/* <CardCarousel /> */}
       <Description />
       {/* <Overline /> */}
-      <About />
+      {/* <About /> */}
       {/* <NFTdivider /> */}
     </div>
   );

@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
-import SpotifyTopArtists from "./SpotifyTopArtists";
+import SpotifyTopArtists from "./LoginSpotify";
 import axios from "axios";
 import spotify from "../images/spotifylogo-removebg-preview.png";
 import apple from "../images/aaa-removebg-preview.png";

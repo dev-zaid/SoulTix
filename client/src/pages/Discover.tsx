@@ -1,6 +1,7 @@
 import React from "react";
 import { HoverEffect } from "../components/ui/card-hover-effect";
 import concert from "../images/concert.jpg";
+import alan from "../images/nft3.webp";
 import { Link } from "react-router-dom";
 export default function Discover() {
   const events = [
@@ -41,7 +42,7 @@ export default function Discover() {
       id: "2",
       name: "The Eras Tour",
       artist: "Taylor Swift",
-      image: "https://example.com/taylor.jpg",
+      image: alan,
       bookingstartDate: "2024-05-01T10:00:00Z",
       bookingendDate: "2024-07-15T23:59:59Z",
       status: "upcoming",

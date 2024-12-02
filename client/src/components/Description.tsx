@@ -1,4 +1,5 @@
 import SilverHand from "../images/Silver-Hand.png";
+import nft1 from "../images/nft1.webp";
 
 export default function Description() {
   return (
@@ -14,22 +15,20 @@ export default function Description() {
                 Overline
               </span>
               <h2 className="font-Sora text-3xl lg:text-4xl  xl:text-6xl mt-3 mb-5">
-                Unlock the Anime Frontier: <br className="lg:hidden block" />{" "}
-                NFT Trading and Collecting
+                Unlock the Music Frontier:
+                <br className="lg:hidden block" />
+                NFT Ticketing and Fan Rewards.{" "}
               </h2>
               <p className="text-slate-500 font-Inter">
-                Unlock the Anime Frontier: Your Ultimate Hub for NFT Trading and
-                Collecting Embark on a New Era: Transforming the Anime NFT
-                Landscape. Explore, Trade, and Collect with Ease!
+                Embark on a New Era: Transforming the Concert Experience with
+                Web3. Explore, Book, and Engage with Ease!
               </p>
             </div>
             <div className="basis-1/2 flex justify-end">
               <div className="w-128">
                 <img
-                  className="w-full h-full object-cover"
-                  src={
-                    "https://slwehdbwpcxuqrwxmwqq.supabase.co/storage/v1/object/public/nft-images/1anime.png"
-                  }
+                  className="w-[600px] h-[450px]"
+                  src={nft1}
                   alt="Color Palettes"
                 />
               </div>

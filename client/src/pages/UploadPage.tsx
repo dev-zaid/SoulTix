@@ -9,6 +9,11 @@ function UploadPage() {
   const [eventDate, setEventDate] = useState("");
   const [bookingDate, setBookingDate] = useState("");
 
+  // State for ticket quantities
+  const [goldTickets, setGoldTickets] = useState(0);
+  const [silverTickets, setSilverTickets] = useState(0);
+  const [platinumTickets, setPlatinumTickets] = useState(0);
+
   const changeHandler = (event: any) => {
     setSelectedFile(event.target.files[0]);
   };
@@ -48,6 +53,11 @@ function UploadPage() {
         event_date: { eventDate },
         booking_date: { bookingDate },
         image: `ipfs://${resData.IpfsHash}`,
+        tickets: {
+          gold: goldTickets,
+          silver: silverTickets,
+          platinum: platinumTickets,
+        },
       };
       console.log(metaData);
     } catch (error) {
@@ -57,6 +67,7 @@ function UploadPage() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center text-white">
+      <div className="pt-20 pb-10 text-2xl">Add Event</div>
       <div className="bg-gray-800 p-4 rounded-md flex items-center">
         <div className="flex flex-col gap-2">
           <form className="max-w-md mx-auto">
@@ -122,11 +133,48 @@ function UploadPage() {
                 Booking Date & Time
               </label>
             </div>
+
+            {/* Ticket Section */}
+            <div className="mt-5">
+              <h3 className="text-lg font-bold">Ticket Types</h3>
+              <div className="flex flex-col gap-4">
+                <div className="flex justify-between">
+                  <label className="text-sm">Gold Tickets:</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={goldTickets}
+                    onChange={(e) => setGoldTickets(Number(e.target.value))}
+                    className="bg-gray-700 text-white border border-gray-600 rounded p-2"
+                  />
+                </div>
+                <div className="flex justify-between">
+                  <label className="text-sm">Silver Tickets:</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={silverTickets}
+                    onChange={(e) => setSilverTickets(Number(e.target.value))}
+                    className="bg-gray-700 text-white border border-gray-600 rounded p-2"
+                  />
+                </div>
+                <div className="flex justify-between">
+                  <label className="text-sm">Platinum Tickets:</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={platinumTickets}
+                    onChange={(e) => setPlatinumTickets(Number(e.target.value))}
+                    className="bg-gray-700 text-white border border-gray-600 rounded p-2"
+                  />
+                </div>
+              </div>
+            </div>
           </form>
-          <label className="form-label mr-2">
+          {/* <label className="form-label mr-2">
             Choose File
             <input type="file" onChange={changeHandler} className="hidden" />
-          </label>
+          </label> */}
           <span>{selectedFile && selectedFile.name}</span>
         </div>
       </div>
@@ -136,7 +184,6 @@ function UploadPage() {
       >
         Submit
       </button>
-
       {cid && (
         <div className="mt-4">
           <img
