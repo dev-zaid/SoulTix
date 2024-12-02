@@ -1,0 +1,16 @@
+[package]
+name = "soultix"
+version = "1.0.0"
+authors = []
+
+[addresses]
+soultix_addr = "676c92cc1b5eebd36e111ce432ba64ec2c1f893ae00baa3858f6f5da48a5a042"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
